@@ -32,7 +32,7 @@ export const BlogListPage = props => {
                         <div className="mb-4 text-sm text-gray-700 dark:text-gray-300">
                             by <a href="#" className="text-gray-700 dark:text-gray-300">{BLOG.AUTHOR}</a> on {p.date?.start_date || p.createdTime}
                             <span className="font-bold mx-1"> | </span>
-                            <a href="#" className="text-gray-700 dark:text-gray-300">{p.category}</a>
+                            <a href={`/category${p.category}`} className="text-gray-700 dark:text-gray-300 hover:underline">{p.category}</a>
                             {/* <span className="font-bold mx-1"> | </span> */}
                             {/* <a href="#" className="text-gray-700">2 Comments</a> */}
                         </div>
@@ -42,7 +42,7 @@ export const BlogListPage = props => {
                         </p>
                             {/* 搜索结果 */}
                         {p.results && (
-                            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm font-light leading-7">
+                            <p className="p-4-lines mt-4 text-gray-700 dark:text-gray-300 text-sm font-light leading-7">
                             {p.results.map(r => (
                                 <span key={r}>{r}</span>
                             ))}
@@ -65,5 +65,5 @@ export const BlogListPage = props => {
                 </Link>
             </div>
         </div>
-  );
+  )
 }
